@@ -1,5 +1,6 @@
 import '@/styles/custom.css';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import Head from 'next/head';
 import { Toaster } from 'react-hot-toast';
 
 const theme = createTheme({
@@ -15,6 +16,9 @@ const theme = createTheme({
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
+       <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Toaster/>
       <CssBaseline />
       <Component {...pageProps} />

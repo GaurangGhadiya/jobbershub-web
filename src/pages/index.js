@@ -2,11 +2,62 @@ import { Button, Container, Grid, Typography, Card, CardContent, Box } from '@mu
 import Image from 'next/image';
 import Layout from './component/layout';
 import { useRouter } from 'next/router';
+import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
+import NightShelterOutlinedIcon from '@mui/icons-material/NightShelterOutlined';
+import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
+import PanToolAltOutlinedIcon from '@mui/icons-material/PanToolAltOutlined';
+let data = [
+  {
+    title: "Install GroMo app and register"
+  },
+  {
+    title: "Attend trainings and share financial product links"
+  },
+  {
+    title: "Install GroMo app and register"
+  },
+  {
+    title: "Attend trainings and share financial product links"
+  },
+  {
+    title: "Attend trainings and share financial product links"
+  },
+
+]
+
+let data2 = [
+  {
+    title: 'Earn more than ₹1 Lakh every month',
+    desc: 'Sell financial products with GroMo and make extra income every month',
+    icon: <VolunteerActivismOutlinedIcon style={{ color: "#6c717f" }} />
+  },
+  {
+    title: 'Work from Anywhere & Anytime',
+    desc: 'You do not need to go to an office or follow fixed working hours—we are flexible',
+    icon: <NightShelterOutlinedIcon style={{ color: "#6c717f" }} />
+  },
+  {
+    title: 'Zero Investment Business',
+    desc: 'Find customers and earn money online without investment like you always wanted',
+    icon: <MonetizationOnOutlinedIcon style={{ color: "#6c717f" }} />
+  },
+  {
+    title: 'Instant Payout',
+    desc: 'No more waiting for weeks to get your sales earning! Get your online earning the moment your sale is success',
+    icon: <MonetizationOnOutlinedIcon style={{ color: "#6c717f" }} />
+  },
+  {
+    title: 'Attend Trainings',
+    desc: 'Get trained by our experts and enroll for online courses to learn how to sell and earn money online',
+    icon: <PanToolAltOutlinedIcon style={{ color: "#6c717f" }} />
+  },
+
+]
 
 export default function Home() {
   return (
     <Layout>
-     
+
 
       {/* Hero Section */}
       <Box className="hero" sx={{
@@ -34,7 +85,7 @@ export default function Home() {
 
             </Grid>
             <Grid item xs={12} md={6}>
-              <Image src="/main.png" alt="Mobile App Preview" width={350} height={520} style={{height : "520px", width : "450px"}} />
+              <Image src="/main.png" alt="Mobile App Preview" width={350} height={520} style={{ height: "520px", width: "450px" }} />
             </Grid>
           </Grid>
         </Container>
@@ -44,11 +95,11 @@ export default function Home() {
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
-              <Image src="/side.png" alt="" width={400} height={600} style={{width : "100%", height : "auto", maxHeight  : "530px"}} />
+              <Image src="/side.png" alt="" width={400} height={600} style={{ width: "100%", height: "auto", maxHeight: "530px" }} />
             </Grid>
             <Grid item xs={12} md={6} pl={4}>
               <Typography color='#FF7409' fontSize={20} fontWeight={600} mb={2}>ABOUT OUR COMPANY</Typography>
-              <Typography color='#12161F' fontSize={46} fontWeight={500} lineHeight={1.1}>We Provide A Few Awesome Services</Typography>
+              <Typography color='#12161F' fontSize={40} fontWeight={500} lineHeight={1.1}>We Provide A Few Awesome Services</Typography>
               <Typography color='#12161F' fontSize={16} textTransform={"capitalize"} fontWeight={300} my={2} lineHeight={2}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived </Typography>
 
               <Grid container spacing={2} mt={2}>
@@ -77,7 +128,7 @@ export default function Home() {
       <Box className="features" backgroundColor="#F7F7F7">
         <Container maxWidth="lg">
           <Typography color='#FF7509' fontSize={20} fontWeight={600} textAlign={"center"}>OUR SERVICES</Typography>
-          <Typography color='#12161F' fontSize={46} fontWeight={700} textAlign={"center"} mb={-3}>Our Features And Services</Typography>
+          <Typography color='#12161F' fontSize={40} fontWeight={700} textAlign={"center"} mb={-3}>Our Features And Services</Typography>
 
           <Grid container spacing={4} className="features-grid" >
             {[
@@ -106,7 +157,53 @@ export default function Home() {
         </Container>
       </Box>
 
-    
+
+      <Box className="features" backgroundColor="#F4F7FF">
+        {/* <Container maxWidth="lg"> */}
+        <Typography color='#12161F' fontSize={40} fontWeight={700} textAlign={"center"} mb={-3}>Start earning with 5 easy steps</Typography>
+        <Grid container spacing={4} className="features-grid" >
+          {data?.map((v, i) => (
+            <Grid item xs={12} md={2.4} display={"flex"} alignItems={"center"} justifyContent={"start"} flexDirection={"column"} width={"100%"}>
+              <Box backgroundColor="white" borderRadius={"50%"} height={180} width={180}>
+
+              </Box>
+              <Box backgroundColor="#27BF35" my={2} borderRadius={"50%"} height={35} width={35} display={"flex"} alignItems={"center"} justifyContent={"center"} >
+                <Typography color='white' fontSize={24}>{i + 1}</Typography>
+              </Box>
+              <Typography fontWeight={600} fontSize={20} textAlign={"center"}>{v.title}</Typography>
+            </Grid>
+          ))}
+          <Box display={"flex"} alignItems={"center"} justifyContent={"center"} width={"100%"} mt={5} ml={5}>
+            <Image src="/google-play.png" alt="Google Play" width={150} height={50} />
+
+          </Box>
+        </Grid>
+        {/* </Container> */}
+      </Box>
+
+
+      <Box className="features" backgroundColor="white">
+        <Container maxWidth="lg">
+          <Typography color='#12161F' fontSize={40} fontWeight={700} mb={0}>Unlock extra income for all your needs</Typography>
+          <Grid container spacing={4} className="features-grid" >
+            <Grid item xs={12} md={7}>
+              {data2?.map(v => (
+                <Box display={"flex"} alignItems={"start"} justifyContent={"start"} width={"100%"} mb={5}>
+                  <Box>{v?.icon}</Box>
+                  <Box ml={2}>
+                    <Typography color='#393f50' fontSize={18}>{v?.title}</Typography>
+                    <Typography color='#6c717f' fontSize={16}>{v?.desc}</Typography>
+                  </Box>
+                </Box>
+              ))}
+            </Grid>
+            <Grid item xs={12} md={5} textAlign={"center"}>
+              <Image src="https://gromo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FEarn.82fbe915.webp&w=1200&q=75" alt="Earn" width={400} height={400} />
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
     </Layout>
   );
 }
