@@ -8,19 +8,24 @@ import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlin
 import PanToolAltOutlinedIcon from '@mui/icons-material/PanToolAltOutlined';
 let data = [
   {
-    title: "Install GroMo app and register"
+    title: "Install GroMo app and register",
+    img : "/1.jpeg"
   },
   {
-    title: "Attend trainings and share financial product links"
+    title: "Attend trainings and share financial product links",
+    img : "/2.jpeg"
   },
   {
-    title: "Install GroMo app and register"
+    title: "Install GroMo app and register",
+    img : "/3.jpeg"
   },
   {
-    title: "Attend trainings and share financial product links"
+    title: "Attend trainings and share financial product links",
+    img : "/4.jpeg"
   },
   {
-    title: "Attend trainings and share financial product links"
+    title: "Attend trainings and share financial product links",
+    img : "/5.jpeg"
   },
 
 ]
@@ -164,8 +169,10 @@ export default function Home() {
         <Grid container spacing={4} className="features-grid" >
           {data?.map((v, i) => (
             <Grid item xs={12} md={2.4} display={"flex"} alignItems={"center"} justifyContent={"start"} flexDirection={"column"} width={"100%"}>
-              <Box backgroundColor="white" borderRadius={"50%"} height={180} width={180}>
-
+              <Box backgroundColor="white" borderRadius={"50%"} height={180} width={180} display={"flex"} overflow={"hidden"} justifyContent={"center"} alignItems={"center"} >
+               <Box marginTop={15}>
+               <Image src={v?.img} height={100} width={150} style={{height : "100%", objectFit : "cover", borderRadius : "4px"}} />
+               </Box>
               </Box>
               <Box backgroundColor="#27BF35" my={2} borderRadius={"50%"} height={35} width={35} display={"flex"} alignItems={"center"} justifyContent={"center"} >
                 <Typography color='white' fontSize={24}>{i + 1}</Typography>
